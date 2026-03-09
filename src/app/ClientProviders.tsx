@@ -8,19 +8,22 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 export function ClientProviders({ children }: { children: ReactNode }) {
     const [splashFinished, setSplashFinished] = useState(false);
     const [mounted, setMounted] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         setMounted(true);
+        // Instantly bypass splash for mobile/tablets to prevent white screens
+        if (typeof window !== "undefined" && window.innerWidth < 1024) {
+            setIsMobile(true);
+            setSplashFinished(true);
+        }
     }, []);
 
     // If not mounted yet (SSR context), just render an empty provider wrapper 
-    // to prevent hydration mismatch and avoid blocking the server with the video
     if (!mounted) {
         return (
             <I18nProvider>
-                <div className="opacity-0 h-screen overflow-hidden">
-                    {children}
-                </div>
+                {children}
             </I18nProvider>
         );
     }
@@ -28,10 +31,8 @@ export function ClientProviders({ children }: { children: ReactNode }) {
     return (
         <I18nProvider>
             {!splashFinished && <SplashLoader onComplete={() => setSplashFinished(true)} />}
-            <div className={`transition-opacity duration-1000 ${splashFinished ? 'opacity-100' : 'opacity-0 h-screen overflow-hidden'}`}>
-                {children}
-                <WhatsAppButton />
-            </div>
+            {children}
+            <WhatsAppButton />
         </I18nProvider>
     );
 }

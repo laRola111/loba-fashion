@@ -12,7 +12,7 @@ export function SplashLoader({ onComplete }: { onComplete: () => void }) {
     const { t } = useI18n();
 
     useEffect(() => {
-        // Detect mobile layout
+        // Detect mobile layout to render the solid logo instead of video
         if (typeof window !== "undefined" && window.innerWidth < 1024) {
             setIsMobile(true);
             const mobileTimer = setTimeout(() => {

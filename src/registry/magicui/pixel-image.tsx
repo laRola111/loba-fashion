@@ -42,17 +42,13 @@ export function PixelImage({
 
     if (isMobile) {
         return (
-            <div
-                ref={containerRef}
-                className={cn("relative overflow-hidden w-full h-full bg-slate-100 dark:bg-slate-900", className)}
-            >
-                <motion.img
+            <div className={cn("relative overflow-hidden w-full h-full bg-slate-100 dark:bg-slate-900", className)}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                     src={src}
                     alt={alt}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    initial={{ opacity: 0, x: -40 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+                    loading="lazy"
                 />
             </div>
         );
