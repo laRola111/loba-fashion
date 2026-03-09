@@ -11,6 +11,12 @@ export function SplashLoader({ onComplete }: { onComplete: () => void }) {
     const { t } = useI18n();
 
     useEffect(() => {
+        // Skip video entirely on mobile devices to prevent loading issues
+        if (typeof window !== "undefined" && window.innerWidth < 768) {
+            onComplete();
+            return;
+        }
+
         // Optional fallback: If the video doesn't play automatically or get stuck, 
         // complete after 7 seconds max (adjust based on actual video length)
         const fallbackTimer = setTimeout(() => {
@@ -18,6 +24,7 @@ export function SplashLoader({ onComplete }: { onComplete: () => void }) {
         }, 7000);
 
         return () => clearTimeout(fallbackTimer);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleComplete = () => {
