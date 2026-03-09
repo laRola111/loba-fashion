@@ -68,15 +68,18 @@ export function Navbar() {
                         <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-2">
                             <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 px-2">Categorías</span>
                             {[
-                                { name: "Todas las Fragancias", hash: "#store" },
-                                { name: "Dama", hash: "#store" },
-                                { name: "Caballero", hash: "#store" },
-                                { name: "Unisex", hash: "#store" },
+                                { name: "Todas las Fragancias", hash: "#store", filter: "all" },
+                                { name: "Dama", hash: "#store", filter: "female" },
+                                { name: "Caballero", hash: "#store", filter: "male" },
+                                { name: "Unisex", hash: "#store", filter: "unisex" },
                             ].map((cat) => (
                                 <a
                                     key={cat.name}
                                     href={cat.hash}
-                                    onClick={() => setIsMenuOpen(false)}
+                                    onClick={() => {
+                                        setIsMenuOpen(false);
+                                        window.dispatchEvent(new CustomEvent('setGlobalFilter', { detail: cat.filter }));
+                                    }}
                                     className="px-4 py-3 rounded-lg hover:bg-brand-50 font-medium text-slate-700 hover:text-brand-600 transition-colors text-left"
                                 >
                                     {cat.name}
