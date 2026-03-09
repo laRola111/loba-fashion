@@ -18,7 +18,7 @@ export const mockProducts: Product[] = [
         gender: "unisex",
         category: ["Fresco", "Equilibrado", "Próximamente"],
         price: 0.00,
-        image_url: "/images/bamboo.png",
+        image_url: "/images/bamboo.webp",
         description: "Fragancia que transmite naturalidad y energía con notas verdes y limpias.",
         upcoming: true
     },
@@ -29,7 +29,7 @@ export const mockProducts: Product[] = [
         gender: "male",
         category: ["Amaderado", "Especiado", "Próximamente"],
         price: 0.00,
-        image_url: "/images/tabaco.png",
+        image_url: "/images/tabaco.webp",
         description: "Aroma profundo y envolvente con presencia intensa, cálida y fondo robusto.",
         upcoming: true
     },
@@ -40,7 +40,7 @@ export const mockProducts: Product[] = [
         gender: "male",
         category: ["Sofisticado", "Intenso", "Próximamente"],
         price: 0.00,
-        image_url: "/images/montanna-savage.png",
+        image_url: "/images/montanna-savage.webp",
         description: "Refleja la fuerza de la naturaleza con notas intensas que evocan metal y cuero.",
         upcoming: true
     },
@@ -51,7 +51,7 @@ export const mockProducts: Product[] = [
         gender: "female",
         category: ["Dulce", "Floral"],
         price: 750.00,
-        image_url: "/images/miel-de-amor.png",
+        image_url: "/images/miel-de-amor.webp",
         description: "Aroma cálido y reconfortante con acordes florales cremosos y fondo avainillado."
     },
     {
@@ -61,7 +61,7 @@ export const mockProducts: Product[] = [
         gender: "female",
         category: ["Intenso", "Dulce"],
         price: 750.00,
-        image_url: "/images/flori-purpura.png",
+        image_url: "/images/flori-purpura.webp",
         description: "Mezcla de frescura aromática con un fondo dulce y sensual."
     },
     {
@@ -71,7 +71,7 @@ export const mockProducts: Product[] = [
         gender: "unisex",
         category: ["Fresco", "Cítrico"],
         price: 750.00,
-        image_url: "/images/agave-destilado.png",
+        image_url: "/images/agave-destilado.webp",
         description: "Frescura inigualable inspirada en los campos de agave."
     },
     {
@@ -81,7 +81,7 @@ export const mockProducts: Product[] = [
         gender: "female",
         category: ["Dulce", "Especiado"],
         price: 750.00,
-        image_url: "/images/amada-canela.png",
+        image_url: "/images/amada-canela.webp",
         description: "Toques cálidos de canela para resaltar la feminidad y dulzura."
     },
     {
@@ -91,7 +91,7 @@ export const mockProducts: Product[] = [
         gender: "female",
         category: ["Floral", "Sensual"],
         price: 750.00,
-        image_url: "/images/amar-yaya.png",
+        image_url: "/images/amar-yaya.webp",
         description: "Un tributo a la belleza floral con destellos luminosos."
     },
     {
@@ -101,7 +101,7 @@ export const mockProducts: Product[] = [
         gender: "male",
         category: ["Amaderado", "Intenso"],
         price: 750.00,
-        image_url: "/images/amargo-cafe.png",
+        image_url: "/images/amargo-cafe.webp",
         description: "Fragancia imponente con fuertes notas de granos de café tostado."
     },
     {
@@ -111,7 +111,7 @@ export const mockProducts: Product[] = [
         gender: "male",
         category: ["Amaderado", "Elegante"],
         price: 750.00,
-        image_url: "/images/barrica-1405.png",
+        image_url: "/images/barrica-1405.webp",
         description: "Esencia madurada que recuerda a maderas finas y cuero."
     },
     {
@@ -121,7 +121,7 @@ export const mockProducts: Product[] = [
         gender: "male",
         category: ["Amaderado", "Especiado"],
         price: 750.00,
-        image_url: "/images/cafe-amargo.png",
+        image_url: "/images/cafe-amargo.webp",
         description: "Variante intensa de granos seleccionados con toques especiados."
     },
     {
@@ -131,7 +131,7 @@ export const mockProducts: Product[] = [
         gender: "female",
         category: ["Fresco", "Floral"],
         price: 750.00,
-        image_url: "/images/palmie.png",
+        image_url: "/images/palmie.webp",
         description: "Aroma jovial y refrescante, ideal para el día a día."
     },
     {
@@ -141,7 +141,7 @@ export const mockProducts: Product[] = [
         gender: "male",
         category: ["Amaderado", "Fresco"],
         price: 750.00,
-        image_url: "/images/santo-cedro.png",
+        image_url: "/images/santo-cedro.webp",
         description: "Elegancia pura extraída de la esencia del cedro natural."
     },
     {
@@ -151,7 +151,7 @@ export const mockProducts: Product[] = [
         gender: "female",
         category: ["Dulce", "Gourmand"],
         price: 750.00,
-        image_url: "/images/sueño-de-chocolate.png",
+        image_url: "/images/sueño-de-chocolate.webp",
         description: "Deliciosa combinación de cacao y vainilla para enamorar."
     }
 ];
