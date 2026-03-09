@@ -53,6 +53,8 @@ export function SplashLoader({ onComplete }: { onComplete: () => void }) {
                             autoPlay
                             muted
                             playsInline
+                            webkit-playsinline="true"
+                            preload="auto"
                             onEnded={handleComplete}
                             className="w-full h-full object-contain"
                         >
