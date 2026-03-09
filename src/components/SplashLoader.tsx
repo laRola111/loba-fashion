@@ -13,7 +13,7 @@ export function SplashLoader({ onComplete }: { onComplete: () => void }) {
 
     useEffect(() => {
         // Detect mobile layout
-        if (typeof window !== "undefined" && window.innerWidth < 768) {
+        if (typeof window !== "undefined" && window.innerWidth < 1024) {
             setIsMobile(true);
             const mobileTimer = setTimeout(() => {
                 handleComplete();

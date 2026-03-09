@@ -26,7 +26,7 @@ export function PixelImage({
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        if (typeof window !== "undefined" && window.innerWidth < 768) {
+        if (typeof window !== "undefined" && window.innerWidth < 1024) {
             setIsMobile(true);
             return;
         }
@@ -50,8 +50,8 @@ export function PixelImage({
                     src={src}
                     alt={alt}
                     className="absolute inset-0 w-full h-full object-cover"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    initial={{ opacity: 0, x: -40 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 />
             </div>
