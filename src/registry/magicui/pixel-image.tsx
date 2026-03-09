@@ -23,8 +23,14 @@ export function PixelImage({
     const isInView = useInView(containerRef, { once: true, margin: "-50px" });
 
     const [grid, setGrid] = useState<{ id: number; delay: number }[]>([]);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
+        if (typeof window !== "undefined" && window.innerWidth < 768) {
+            setIsMobile(true);
+            return;
+        }
+
         const totalPixels = customGrid.rows * customGrid.cols;
         const newGrid = Array.from({ length: totalPixels }).map((_, i) => ({
             id: i,
@@ -33,6 +39,24 @@ export function PixelImage({
         }));
         setGrid(newGrid);
     }, [customGrid.rows, customGrid.cols]);
+
+    if (isMobile) {
+        return (
+            <div
+                ref={containerRef}
+                className={cn("relative overflow-hidden w-full h-full bg-slate-100 dark:bg-slate-900", className)}
+            >
+                <motion.img
+                    src={src}
+                    alt={alt}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                />
+            </div>
+        );
+    }
 
     return (
         <div
